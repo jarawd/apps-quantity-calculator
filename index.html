@@ -10,8 +10,10 @@
 
 <body>
   <h2>Cantidad de apps</h2>
+
+  <!--Form para 2D-->
   <p>1D</p>
-  <form class="parameters_form">
+  <form class="parameters_form-1D">
     <div>
       <label for="material-length">Longitud del material</label>
       <select class="material-length_unit" required>
@@ -34,9 +36,9 @@
       <label for="knot-waste">Desperdicio por nudos (si es madera)</label>
       <select class="knot-waste_unit" required>
         <option value="" disabled selected>--</option>
-        <option value="na">NA</option>
         <option value="in">in</option>
         <option value="cm">cm</option>
+        <option value="na">n/a</option>
       </select>
       <input class="knot-waste_value" id="knot-waste" type="number" min="0" step="0.001" required />
     </div>
@@ -58,11 +60,73 @@
       </select>
       <input class="cut-width_value" id="cut-width" type="number" min="0" step="0.001" required />
     </div>
-    <button class="parameters_form__btn" type="submit">Calcular</button>
-    <input class="parameters_form__result" type="text" readonly /> apps
+    <button class="parameters_form-1D__btn" type="submit">Calcular</button>
+    <input class="parameters_form-1D__result" type="text" readonly /> apps
     <button type="reset">Limpiar</button>
   </form>
+
+  <!--Form para 2D-->
+
   <p>2D</p>
+  <form class="parameters_form-2D">
+    <div>
+      <label for="length">Largo</label>
+      <select class="length_unit" required>
+        <option value="" disabled selected>--</option>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+      <input class="length_value" id="length" type="number" min="0" step="0.0001" required />
+    </div>
+    <div>
+      <label for="width">Ancho</label>
+      <select class="width_unit" required>
+        <option value="" disabled selected>--</option>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+      <input class="width_value" id="width" type="number" min="0" step="0.0001" required />
+    </div>
+    <label>Área no perforable</label>
+    <div>
+      <label for="no-cut-x">X</label>
+      <select class="no-cut-x_unit" required>
+        <option value="" disabled selected>--</option>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+      <input class="no-cut-x_value" id="no-cut-x" type="number" min="0" step="0.0001" required />
+    </div>
+    <div>
+      <label for="no-cut-y">Y</label>
+      <select class="no-cut-y_unit" required>
+        <option value="" disabled selected>--</option>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+      <input class="no-cut-y_value" id="no-cut-y" type="number" min="0" step="0.0001" required />
+    </div>
+    <label for="diameter">Diámetro del barreno</label>
+    <select class="diameter_unit" required>
+      <option value="" disabled selected>--</option>
+      <option value="in">in</option>
+      <option value="cm">cm</option>
+    </select>
+    <input class="diameter_value" id="diameter" type="number" min="0" step="0.0001" required />
+    </div>
+    <div>
+      <label for="gap">Gap</label>
+      <select class="gap_unit" required>
+        <option value="" disabled selected>--</option>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+      <input class="gap_value" id="gap" type="number" min="0" step="0.0001" required />
+    </div>
+    <button class="parameters_form-2D__btn" type="submit">Calcular</button>
+    <input class="parameters_form-2D__result" type="text" readonly /> apps
+    <button type="reset">Limpiar</button>
+  </form>
   <script src="./javascript/main.js" type="module"></script>
 </body>
 
