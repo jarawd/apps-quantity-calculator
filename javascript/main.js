@@ -108,10 +108,10 @@ function getAppsQuantity() {
   const width = getWidth();
   const app = getAppDimension();
 
-  const appsX = Math.floor(length / app);
-  const appsY = Math.floor(width / app);
+  const appsX = Math.round(length / app);
+  const appsY = Math.round(width / app);
 
-  const totalApps = (appsX + 1) * (appsY + 1);
+  const totalApps = appsX * appsY;
 
   const result = form2DValues.result;
 
