@@ -104,6 +104,8 @@ function getAppDimension() {
 }
 
 function getAppsQuantity() {
+  const bothSides = form2DValues.both.value;
+
   const length = getLength();
   const width = getWidth();
   const app = getAppDimension();
@@ -115,7 +117,7 @@ function getAppsQuantity() {
 
   const result = form2DValues.result;
 
-  result.value = round(totalApps);
+  result.value = bothSides === 'yes' ? round(totalApps) * 2 : round(totalApps);
 }
 
 form2D.addEventListener('submit', (e) => {

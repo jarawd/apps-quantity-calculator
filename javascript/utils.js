@@ -42,4 +42,5 @@ export const form2DValues = {
   gapValue: d.querySelector('.gap_value'),
   button: d.querySelector('.parameters_form-2D__btn'),
   result: d.querySelector('.parameters_form-2D__result'),
+  both: d.querySelector('.both-sides'),
 };
