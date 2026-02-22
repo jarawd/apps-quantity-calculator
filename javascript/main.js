@@ -92,7 +92,7 @@ function getWidth() {
 function getAppDimension() {
   const diameterUnit = form2DUnits.diameterUnit.value;
   const diameterValue = Number(form2DValues.diameterValue.value);
-  const diameter = diameterUnit === 'cm' ? diameterValue / 2.54 : diameterValue;
+  const diameter = diameterUnit === 'mm' ? diameterValue / 25.4 : diameterValue;
 
   const gapUnit = form2DUnits.gapUnit.value;
   const gapValue = Number(form2DValues.gapValue.value);
