@@ -9,20 +9,50 @@
 body {
   background: linear-gradient(135deg, #1e293b, #0f172a);
   color: #f1f5f9;
-  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: justify;
 }
 
+/* HERO */
+.hero {
+  width: 100%;
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: white;
+  overflow: hidden;
+}
+
+/* Imagen de fondo */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(./images/hero.jpeg) center/cover no-repeat;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Texto encima */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
 /* ===== TITULOS ===== */
 .title {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
   font-weight: 600;
+  padding: 0 15px;
   text-align: center;
   font-style: italic;
+  z-index: 1;
 }
 
 .section-title {
