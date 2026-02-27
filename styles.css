@@ -7,42 +7,12 @@
 }
 
 body {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: #f1f5f9;
+  background: linear-gradient(135deg, #1F2328, #12161B);
+  color: #E6EDF3;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: justify;
-}
-
-/* HERO */
-.hero {
-  width: 100%;
-  position: relative;
-  min-height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-  color: white;
-  overflow: hidden;
-}
-
-/* Imagen de fondo */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url(./images/hero.jpeg) center/cover no-repeat;
-  opacity: 0.6;
-  z-index: 0;
-}
-
-/* Texto encima */
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
 }
 
 /* ===== TITULOS ===== */
@@ -50,21 +20,21 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
   padding: 0 15px;
+  margin: 30px 0;
   text-align: center;
   font-style: italic;
   z-index: 1;
 }
 
 .section-title {
-  color: #38bdf8;
+  color: #0077B6;
 }
 
 p {
   font-size: 1.2rem;
-  margin: 0;
   margin: 15px 0;
   font-weight: 500;
-  color: #38bdf8;
+  color: #00B4D8;
 }
 
 /* ===== DESCRIPCIÓN DE FORMULARIOS ===== */
@@ -78,7 +48,7 @@ p {
 .form-description h3 {
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: #38bdf8;
+  color: #0077B6;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -86,7 +56,7 @@ p {
 .form-description p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #AEB6BF;
   margin-bottom: 10px;
 }
 
@@ -97,12 +67,12 @@ p {
 /* ===== FORMULARIOS ===== */
 .parameters_form-1D,
 .parameters_form-2D {
-  background: #1e293b;
+  background: #1F2328;
   padding: 25px;
   border-radius: 12px;
   width: 100%;
   max-width: 750px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   margin-bottom: 60px;
 
   display: grid;
@@ -112,7 +82,7 @@ p {
 /* ===== ITEMS ===== */
 .parameters_form-1D_item,
 .parameters_form-2D_item {
-  background: #0f172a;
+  background: #2A2F36;
   padding: 15px;
   border-radius: 10px;
   display: grid;
@@ -121,12 +91,11 @@ p {
   align-items: center;
 }
 
-/* Label principal ocupa toda la fila */
 .parameters_form-1D_item>label:first-child,
 .parameters_form-2D_item>label:first-child {
   grid-column: 1 / -1;
   font-weight: 500;
-  color: #cbd5e1;
+  color: #AEB6BF;
 }
 
 .no-usable {
@@ -139,7 +108,7 @@ p {
 .units-legend,
 .value-legend {
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: #6B7785;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -150,9 +119,9 @@ input,
 select {
   padding: 8px 10px;
   border-radius: 6px;
-  border: 1px solid #334155;
-  background-color: #1e293b;
-  color: #f8fafc;
+  border: 1px solid #3A3F45;
+  background-color: #1F2328;
+  color: #E6EDF3;
   font-size: 0.9rem;
   transition: 0.2s ease-in-out;
   width: 100%;
@@ -161,8 +130,8 @@ select {
 input:focus,
 select:focus {
   outline: none;
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+  border-color: #0077B6;
+  box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.35);
 }
 
 /* ===== BOTONES ===== */
@@ -177,32 +146,33 @@ button {
 
 .parameters_form-1D__btn,
 .parameters_form-2D__btn {
-  background: #38bdf8;
-  color: #0f172a;
+  background: #0077B6;
+  color: #FFFFFF;
 }
 
 .parameters_form-1D__btn:hover,
 .parameters_form-2D__btn:hover {
-  background: #0ea5e9;
+  background: #00B4D8;
 }
 
 button[type="reset"] {
-  background: #334155;
-  color: #f1f5f9;
+  background: #3A3F45;
+  color: #E6EDF3;
 }
 
 button[type="reset"]:hover {
-  background: #475569;
+  background: #4A5058;
 }
 
 /* ===== RESULTADOS ===== */
 .parameters_form-1D__result,
 .parameters_form-2D__result {
-  background: #0f172a;
+  background: #1F2328;
   font-weight: bold;
   text-align: center;
-  border: 2px solid #38bdf8;
+  border: 2px solid #0077B6;
   padding: 8px;
+  color: #00B4D8;
 }
 
 /* ===== FOOTER ===== */
@@ -220,7 +190,7 @@ button[type="reset"]:hover {
 }
 
 .site-footer p:first-child {
-  color: #38bdf8;
+  color: #0077B6;
   font-weight: 500;
 }
 
@@ -238,7 +208,6 @@ button[type="reset"]:hover {
   }
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .form-description {
     padding: 15px;
