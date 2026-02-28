@@ -19,7 +19,7 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  margin: 30px 0;
+  margin: 80px 0;
 }
 
 .logo__img {
@@ -27,7 +27,7 @@ body {
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   font-weight: 600;
   text-align: center;
   font-style: italic;
@@ -36,6 +36,8 @@ body {
 
 .section-title {
   color: #0077B6;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 p {
@@ -48,9 +50,8 @@ p {
 /* ===== DESCRIPCIÓN DE FORMULARIOS ===== */
 
 .form-description {
-  padding: 18px 20px;
   margin: 10px 0 20px 0;
-  max-width: 750px;
+  max-width: 650px;
 }
 
 .form-description h3 {
@@ -79,10 +80,9 @@ p {
   padding: 25px;
   border-radius: 12px;
   width: 100%;
-  max-width: 750px;
+  max-width: 650px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   margin-bottom: 60px;
-
   display: grid;
   gap: 18px;
 }
