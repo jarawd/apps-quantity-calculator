@@ -11,174 +11,177 @@
 </head>
 
 <body>
-  <div class="logo-container">
+  <header class="logo-container">
     <img src="./images/logo.svg" alt="drill-logo" class="logo__img" />
     <h1 class="title">Optimización de Corte Industrial sin Desperdicio</h1>
-  </div>
+  </header>
 
 
   <!--Seccion 1D-->
+  <main class="main-content">
 
-  <h3 class="section-title">Corte Lineal (1D)</h3>
-  <div class="form-description">
-    <p>
-      Esta sección calcula la cantidad de aplicaciones que pueden obtenerse
-      a partir de materiales que se trabajan en una sola dimensión longitudinal como: troncos, perfiles, tubos, polines,
-      barras o vigas, donde los cortes se realizan únicamente a lo largo de su eje principal.
-    </p>
-  </div>
-  <form class="parameters_form-1D">
-    <div class="parameters_form-1D_item">
-      <label for="material-length">Longitud del material</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="material-length_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="ft">ft</option>
-        <option value="in">in</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="material-length_value" id="material-length" type="number" min="0" step="0.001" required />
+    <h3 class="section-title">Corte Lineal (1D)</h3>
+    <div class="form-description">
+      <p>
+        Esta sección calcula la cantidad de aplicaciones que pueden obtenerse
+        a partir de materiales que se trabajan en una sola dimensión longitudinal como: troncos, perfiles, tubos,
+        polines,
+        barras o vigas, donde los cortes se realizan únicamente a lo largo de su eje principal.
+      </p>
     </div>
-    <div class="parameters_form-1D_item">
-      <label for="holding-waste">Longitud de sujeción (clamp)</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="holding-waste_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="holding-waste_value" id="holding-waste" type="number" min="0" step="0.001" required />
-    </div>
-    <div class="parameters_form-1D_item">
-      <label for="knot-waste">Desperdicio por nudos (si aplica)</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="knot-waste_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-        <option value="na">n/a</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="knot-waste_value" id="knot-waste" type="number" min="0" step="0.001" required />
-    </div>
-    <div class="parameters_form-1D_item">
-      <label for="cutter-width">Espesor del accesorio (cortador)</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="cutter-width_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="mm">mm</option>
-        <option value="in">in</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="cutter-width_value" id="cutter-width" type="number" min="0" step="0.001" required />
-    </div>
-    <div class="parameters_form-1D_item">
-      <label for="cut-width">Longitud del corte</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="cut-width_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="mm">mm</option>
-        <option value="in">in</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="cut-width_value" id="cut-width" type="number" min="0" step="0.001" required />
-    </div>
-    <button class="parameters_form-1D__btn" type="submit">Calcular apps</button>
-    <input class="parameters_form-1D__result" type="text" readonly />
-    <button type="reset">Limpiar campos</button>
-  </form>
+    <form class="parameters_form-1D">
+      <div class="parameters_form-1D_item">
+        <label for="material-length">Longitud del material</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="material-length_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="ft">ft</option>
+          <option value="in">in</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="material-length_value" id="material-length" type="number" min="0" step="0.001" required />
+      </div>
+      <div class="parameters_form-1D_item">
+        <label for="holding-waste">Longitud de sujeción (clamp)</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="holding-waste_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="holding-waste_value" id="holding-waste" type="number" min="0" step="0.001" required />
+      </div>
+      <div class="parameters_form-1D_item">
+        <label for="knot-waste">Desperdicio por nudos (si aplica)</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="knot-waste_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+          <option value="na">n/a</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="knot-waste_value" id="knot-waste" type="number" min="0" step="0.001" required />
+      </div>
+      <div class="parameters_form-1D_item">
+        <label for="cutter-width">Espesor del accesorio (cortador)</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="cutter-width_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="mm">mm</option>
+          <option value="in">in</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="cutter-width_value" id="cutter-width" type="number" min="0" step="0.001" required />
+      </div>
+      <div class="parameters_form-1D_item">
+        <label for="cut-width">Longitud del corte</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="cut-width_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="mm">mm</option>
+          <option value="in">in</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="cut-width_value" id="cut-width" type="number" min="0" step="0.001" required />
+      </div>
+      <button class="parameters_form-1D__btn" type="submit">Calcular apps</button>
+      <input class="parameters_form-1D__result" type="text" readonly />
+      <button type="reset">Limpiar campos</button>
+    </form>
 
-  <!--Seccion 2D-->
+    <!--Seccion 2D-->
 
-  <h3 class="section-title">Distribución Bidimensional (2D)</h3>
-  <div class="form-description">
-    <p>
-      Por otra parte, esta sección calcula la cantidad de aplicaciones que pueden realizarse
-      en materiales con superficie bidimensional, donde el mecanizado o perforación se distribuye
-      en ambos ejes (X y Y).<br />
-      Está orientado a materiales como bloques de concreto, láminas, placas, paneles o superficies
-      planas en general.
-    </p>
-  </div>
-  <form class="parameters_form-2D">
-    <div class="parameters_form-2D_item">
-      <label for="length">Largo del material</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="length_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="length_value" id="length" type="number" min="0" step="0.0001" required />
+    <h3 class="section-title">Distribución Bidimensional (2D)</h3>
+    <div class="form-description">
+      <p>
+        Por otra parte, esta sección calcula la cantidad de aplicaciones que pueden realizarse
+        en materiales con superficie bidimensional, donde el mecanizado o perforación se distribuye
+        en ambos ejes (X y Y).<br />
+        Está orientado a materiales como bloques de concreto, láminas, placas, paneles o superficies
+        planas en general.
+      </p>
     </div>
-    <div class="parameters_form-2D_item">
-      <label for="width">Ancho del material</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="width_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="width_value" id="width" type="number" min="0" step="0.0001" required />
-    </div>
-    <div class="parameters_form-2D_item no-usable">
-      <label>Área no usable (clamp, sujeción)</label>
-      <label for="no-cut-x">Eje X (total de ambos lados)</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="no-cut-x_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="no-cut-x_value" id="no-cut-x" type="number" min="0" step="0.0001" required />
-      <label for="no-cut-y">Eje Y (total de ambos lados)</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="no-cut-y_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="no-cut-y_value" id="no-cut-y" type="number" min="0" step="0.0001" required />
-    </div>
-    <div class="parameters_form-2D_item">
-      <label for="diameter">Diámetro</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="diameter_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="mm">mm</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="diameter_value" id="diameter" type="number" min="0" step="0.0001" required />
-    </div>
-    <div class="parameters_form-2D_item">
-      <label for="gap">Gap (distancia entre barrenos)</label>
-      <span class="units-legend">Unidad:</span>
-      <select class="gap_unit" required>
-        <option value="" disabled selected>--</option>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-      </select>
-      <span class="value-legend">Valor:</span>
-      <input class="gap_value" id="gap" type="number" min="0" step="0.0001" required />
-    </div>
-    <div class="parameters_form-2D_item">
-      <label>¿El material permite perforar en ambos lados?</label>
-      <select class="both-sides" required>
-        <option value="" disabled selected>--</option>
-        <option value="yes">Sí</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-    <button class="parameters_form-2D__btn" type="submit">Calcular apps</button>
-    <input class="parameters_form-2D__result" type="text" readonly />
-    <button type="reset">Limpiar campos</button>
-  </form>
+    <form class="parameters_form-2D">
+      <div class="parameters_form-2D_item">
+        <label for="length">Largo del material</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="length_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="length_value" id="length" type="number" min="0" step="0.0001" required />
+      </div>
+      <div class="parameters_form-2D_item">
+        <label for="width">Ancho del material</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="width_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="width_value" id="width" type="number" min="0" step="0.0001" required />
+      </div>
+      <div class="parameters_form-2D_item no-usable">
+        <label>Área no usable (clamp, sujeción)</label>
+        <label for="no-cut-x">Eje X (total de ambos lados)</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="no-cut-x_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="no-cut-x_value" id="no-cut-x" type="number" min="0" step="0.0001" required />
+        <label for="no-cut-y">Eje Y (total de ambos lados)</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="no-cut-y_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="no-cut-y_value" id="no-cut-y" type="number" min="0" step="0.0001" required />
+      </div>
+      <div class="parameters_form-2D_item">
+        <label for="diameter">Diámetro</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="diameter_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="mm">mm</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="diameter_value" id="diameter" type="number" min="0" step="0.0001" required />
+      </div>
+      <div class="parameters_form-2D_item">
+        <label for="gap">Gap (distancia entre barrenos)</label>
+        <span class="units-legend">Unidad:</span>
+        <select class="gap_unit" required>
+          <option value="" disabled selected>--</option>
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+        </select>
+        <span class="value-legend">Valor:</span>
+        <input class="gap_value" id="gap" type="number" min="0" step="0.0001" required />
+      </div>
+      <div class="parameters_form-2D_item">
+        <label>¿El material permite perforar en ambos lados?</label>
+        <select class="both-sides" required>
+          <option value="" disabled selected>--</option>
+          <option value="yes">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <button class="parameters_form-2D__btn" type="submit">Calcular apps</button>
+      <input class="parameters_form-2D__result" type="text" readonly />
+      <button type="reset">Limpiar campos</button>
+    </form>
+  </main>
   <footer class="site-footer">
     <p>© 2026 Jara | Todos los derechos reservados.</p>
   </footer>
