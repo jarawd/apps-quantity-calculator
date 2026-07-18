@@ -1,9 +1,8 @@
 const d = document;
 
-// Elementos para los cálculos en 1D
-export const form1D = d.querySelector('.parameters_form-1D');
+const form1D = d.querySelector('.parameters_form-1D');
 
-export const form1DUnits = {
+const form1DUnits = {
   materialLengthUnit: d.querySelector('.material-length_unit'),
   holdingWasteUnit: d.querySelector('.holding-waste_unit'),
   knotWasteUnit: d.querySelector('.knot-waste_unit'),
@@ -11,7 +10,7 @@ export const form1DUnits = {
   cutWidthUnit: d.querySelector('.cut-width_unit'),
 };
 
-export const form1DValues = {
+const form1DValues = {
   materialLengthValue: d.querySelector('.material-length_value'),
   holdingWasteValue: d.querySelector('.holding-waste_value'),
   knotWasteValue: d.querySelector('.knot-waste_value'),
@@ -21,10 +20,9 @@ export const form1DValues = {
   result: d.querySelector('.parameters_form-1D__result'),
 };
 
-// Elementos para los cálculos en 2D
-export const form2D = d.querySelector('.parameters_form-2D');
+const form2D = d.querySelector('.parameters_form-2D');
 
-export const form2DUnits = {
+const form2DUnits = {
   lengthUnit: d.querySelector('.length_unit'),
   widthUnit: d.querySelector('.width_unit'),
   noCutXUnit: d.querySelector('.no-cut-x_unit'),
@@ -33,7 +31,7 @@ export const form2DUnits = {
   gapUnit: d.querySelector('.gap_unit'),
 };
 
-export const form2DValues = {
+const form2DValues = {
   lengthValue: d.querySelector('.length_value'),
   widthValue: d.querySelector('.width_value'),
   noCutXValue: d.querySelector('.no-cut-x_value'),

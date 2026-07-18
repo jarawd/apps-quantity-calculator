@@ -1,126 +1,149 @@
-import {
-  form1DUnits,
-  form1DValues,
-  form1D,
-  form2D,
-  form2DUnits,
-  form2DValues,
-} from './utils.js';
+document.addEventListener('DOMContentLoaded', () => {
 
-// Funciones para los cálculos en 1D
-function excludingHolding() {
-  const lengthMaterialUnit = form1DUnits.materialLengthUnit.value;
-  const holdingWasteUnit = form1DUnits.holdingWasteUnit.value;
-  const materialLength = Number(form1DValues.materialLengthValue.value);
-  const holdingLength = Number(form1DValues.holdingWasteValue.value);
+  // Navegación entre landing y formularios
+  const landing = document.getElementById('landing');
+  const cards = document.querySelectorAll('.landing__card');
+  const backBtns = document.querySelectorAll('.back-btn');
 
-  const materialInches =
-    lengthMaterialUnit === 'ft' ? materialLength * 12 : materialLength;
+  cards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const targetId = card.dataset.target;
+      const targetSection = document.getElementById(targetId);
+      landing.classList.add('hidden');
+      targetSection.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 
-  const wasteInches =
-    holdingWasteUnit === 'cm' ? holdingLength / 2.54 : holdingLength;
+  backBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const targetSection = document.getElementById(targetId);
+      document.querySelectorAll('.form-section').forEach((s) => s.classList.add('hidden'));
+      targetSection.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 
-  const resultLength = materialInches - wasteInches;
-  return resultLength;
-}
+  // Funciones para los cálculos en 1D
+  function excludingHolding() {
+    const lengthMaterialUnit = form1DUnits.materialLengthUnit.value;
+    const holdingWasteUnit = form1DUnits.holdingWasteUnit.value;
+    const materialLength = Number(form1DValues.materialLengthValue.value);
+    const holdingLength = Number(form1DValues.holdingWasteValue.value);
 
-function excludingKnots() {
-  const knotWaste = form1DUnits.knotWasteUnit.value;
-  const knotLength = Number(form1DValues.knotWasteValue.value);
-  const lengthInches = knotWaste === 'cm' ? knotLength / 2.54 : knotLength;
-  const withoutHolding = excludingHolding();
-  const finalLength = withoutHolding - lengthInches;
-  return finalLength;
-}
+    const materialInches =
+      lengthMaterialUnit === 'ft' ? materialLength * 12 : materialLength;
 
-function round(num) {
-  return Math.round(num * 100) / 100;
-}
+    const wasteInches =
+      holdingWasteUnit === 'cm' ? holdingLength / 2.54 : holdingLength;
 
-function cutArea() {
-  const cutterUnit = form1DUnits.cutterWidthUnit.value;
-  const cutUnit = form1DUnits.cutWidthUnit.value;
-  const cutter = Number(form1DValues.cutterWidthValue.value);
-  const cut = Number(form1DValues.cutWidthValue.value);
+    const resultLength = materialInches - wasteInches;
+    return resultLength;
+  }
 
-  const cutterInches = cutterUnit === 'mm' ? cutter / 25.4 : cutter;
-  const cutInches = cutUnit === 'mm' ? cut / 25.4 : cut;
+  function excludingKnots() {
+    const knotWaste = form1DUnits.knotWasteUnit.value;
+    const knotLength = Number(form1DValues.knotWasteValue.value);
+    const lengthInches = knotWaste === 'cm' ? knotLength / 2.54 : knotLength;
+    const withoutHolding = excludingHolding();
+    const finalLength = withoutHolding - lengthInches;
+    return finalLength;
+  }
 
-  const sum = cutterInches + cutInches;
-  const freeArea = excludingKnots();
-  const cutsQty = freeArea / sum;
+  function round(num) {
+    return Math.round(num * 100) / 100;
+  }
 
-  const result = form1DValues.result;
-  result.value = round(cutsQty);
-}
+  function cutArea() {
+    const cutterUnit = form1DUnits.cutterWidthUnit.value;
+    const cutUnit = form1DUnits.cutWidthUnit.value;
+    const cutter = Number(form1DValues.cutterWidthValue.value);
+    const cut = Number(form1DValues.cutWidthValue.value);
 
-form1D.addEventListener('submit', (e) => {
-  e.preventDefault();
-  cutArea();
-});
+    const cutterInches = cutterUnit === 'mm' ? cutter / 25.4 : cutter;
+    const cutInches = cutUnit === 'mm' ? cut / 25.4 : cut;
 
-// Funciones para los cálculos en 2D
+    const sum = cutterInches + cutInches;
+    const freeArea = excludingKnots();
+    const cutsQty = freeArea / sum;
 
-function getLength() {
-  const totalLengthUnits = form2DUnits.lengthUnit.value;
-  const totalLengthValue = Number(form2DValues.lengthValue.value);
-  const totalLength =
-    totalLengthUnits === 'cm' ? totalLengthValue / 2.54 : totalLengthValue;
+    const result = form1DValues.result;
+    result.value = round(cutsQty);
+  }
 
-  const noCutUnitsX = form2DUnits.noCutXUnit.value;
-  const noCutValueX = Number(form2DValues.noCutXValue.value);
-  const noCutLength = noCutUnitsX === 'cm' ? noCutValueX / 2.54 : noCutValueX;
+  form1D.addEventListener('submit', (e) => {
+    e.preventDefault();
+    cutArea();
+  });
 
-  const finalCutLength = totalLength - noCutLength;
-  return finalCutLength;
-}
+  // Funciones para los cálculos en 2D
 
-function getWidth() {
-  const totalWidthUnits = form2DUnits.widthUnit.value;
-  const totalWidthValue = Number(form2DValues.widthValue.value);
-  const totalWidth =
-    totalWidthUnits === 'cm' ? totalWidthValue / 2.54 : totalWidthValue;
+  function getLength() {
+    const totalLengthUnits = form2DUnits.lengthUnit.value;
+    const totalLengthValue = Number(form2DValues.lengthValue.value);
+    const totalLength =
+      totalLengthUnits === 'cm' ? totalLengthValue / 2.54 : totalLengthValue;
 
-  const noCutUnitsY = form2DUnits.noCutYUnit.value;
-  const noCutValueY = Number(form2DValues.noCutYValue.value);
-  const noCutWidth = noCutUnitsY === 'cm' ? noCutValueY / 2.54 : noCutValueY;
+    const noCutUnitsX = form2DUnits.noCutXUnit.value;
+    const noCutValueX = Number(form2DValues.noCutXValue.value);
+    const noCutLength = noCutUnitsX === 'cm' ? noCutValueX / 2.54 : noCutValueX;
 
-  const finalCutWidth = totalWidth - noCutWidth;
-  return finalCutWidth;
-}
+    const finalCutLength = totalLength - noCutLength;
+    return finalCutLength;
+  }
 
-function getAppDimension() {
-  const diameterUnit = form2DUnits.diameterUnit.value;
-  const diameterValue = Number(form2DValues.diameterValue.value);
-  const diameter = diameterUnit === 'mm' ? diameterValue / 25.4 : diameterValue;
+  function getWidth() {
+    const totalWidthUnits = form2DUnits.widthUnit.value;
+    const totalWidthValue = Number(form2DValues.widthValue.value);
+    const totalWidth =
+      totalWidthUnits === 'cm' ? totalWidthValue / 2.54 : totalWidthValue;
 
-  const gapUnit = form2DUnits.gapUnit.value;
-  const gapValue = Number(form2DValues.gapValue.value);
-  const gap = gapUnit === 'cm' ? gapValue / 2.54 : gapValue;
+    const noCutUnitsY = form2DUnits.noCutYUnit.value;
+    const noCutValueY = Number(form2DValues.noCutYValue.value);
+    const noCutWidth = noCutUnitsY === 'cm' ? noCutValueY / 2.54 : noCutValueY;
 
-  const appDimension = diameter + gap;
+    const finalCutWidth = totalWidth - noCutWidth;
+    return finalCutWidth;
+  }
 
-  return appDimension;
-}
+  function getAppDimension() {
+    const diameterUnit = form2DUnits.diameterUnit.value;
+    const diameterValue = Number(form2DValues.diameterValue.value);
+    const diameter = diameterUnit === 'mm' ? diameterValue / 25.4 : diameterValue;
 
-function getAppsQuantity() {
-  const bothSides = form2DValues.both.value;
+    const gapUnit = form2DUnits.gapUnit.value;
+    const gapValue = Number(form2DValues.gapValue.value);
+    const gap = gapUnit === 'cm' ? gapValue / 2.54 : gapValue;
 
-  const length = getLength();
-  const width = getWidth();
-  const app = getAppDimension();
+    const gapType = document.querySelector('input[name="gap_type"]:checked');
 
-  const appsX = Math.round(length / app);
-  const appsY = Math.round(width / app);
+    if (gapType.value === 'tangencial') {
+      return diameter + gap;
+    }
 
-  const totalApps = appsX * appsY;
+    return gap;
+  }
 
-  const result = form2DValues.result;
+  function getAppsQuantity() {
+    const bothSides = form2DValues.both.value;
 
-  result.value = bothSides === 'yes' ? round(totalApps) * 2 : round(totalApps);
-}
+    const length = getLength();
+    const width = getWidth();
+    const app = getAppDimension();
 
-form2D.addEventListener('submit', (e) => {
-  e.preventDefault();
-  getAppsQuantity();
+    const appsX = Math.round(length / app);
+    const appsY = Math.round(width / app);
+
+    const totalApps = appsX * appsY;
+
+    const result = form2DValues.result;
+
+    result.value = bothSides === 'yes' ? round(totalApps) * 2 : round(totalApps);
+  }
+
+  form2D.addEventListener('submit', (e) => {
+    e.preventDefault();
+    getAppsQuantity();
+  });
 });
